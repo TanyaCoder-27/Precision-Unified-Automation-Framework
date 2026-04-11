@@ -1,7 +1,8 @@
 package PageObjects;
 
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import utils.WaitUtils;
 
 public class HomePage extends Basepage {
@@ -15,12 +16,33 @@ public class HomePage extends Basepage {
     }
 
     public void clickSignupLogin() {
-        WaitUtils.waitForElement(signupLoginBtn).click();
+        try {
+            // Wait for element to be clickable first
+            WaitUtils.waitForElementToBeClickable(signupLoginBtn).click();
+        } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+            // If still intercepted, try JavaScript click
+            WebElement signupLoginElement = WaitUtils.waitForElement(signupLoginBtn);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", signupLoginElement);
+        }
     }
     public void clickOnProduct() {
-        WaitUtils.waitForElement(productbtn).click();
+        try {
+            // Wait for element to be clickable first
+            WaitUtils.waitForElementToBeClickable(productbtn).click();
+        } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+            // If still intercepted, try JavaScript click
+            WebElement productElement = WaitUtils.waitForElement(productbtn);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", productElement);
+        }
     }
     public void clickCart() {
-        WaitUtils.waitForElement(cartBtn).click();
+        try {
+            // Wait for element to be clickable first
+            WaitUtils.waitForElementToBeClickable(cartBtn).click();
+        } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+            // If still intercepted, try JavaScript click
+            WebElement cartElement = WaitUtils.waitForElement(cartBtn);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", cartElement);
+        }
     }
 }
