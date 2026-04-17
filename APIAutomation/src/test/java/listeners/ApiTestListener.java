@@ -28,6 +28,14 @@ public class ApiTestListener implements ITestListener {
         LoggerUtil.logError("TEST FAILED: " + result.getMethod().getMethodName());
         LoggerUtil.logError("Failure Reason: " + result.getThrowable().getMessage());
         LoggerUtil.logTestEnd(result.getMethod().getMethodName());
+
+        Object response = result.getAttribute("response");
+        if (response != null) {
+            Allure.addAttachment(
+                "Failure Response",
+                new ByteArrayInputStream(response.toString().getBytes())
+            );
+        }
     }
     
     @Override
