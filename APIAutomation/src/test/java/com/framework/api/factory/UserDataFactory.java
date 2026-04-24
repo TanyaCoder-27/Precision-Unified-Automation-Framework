@@ -18,23 +18,23 @@ public class UserDataFactory {
      */
     public static User createValidUser() {
         User user = new User();
-        user.setName(ConfigReader.get("test.user.name", "John Doe"));
-        user.setEmail(ConfigReader.get("test.user.email", "john.doe@test.com"));
-        user.setPassword(ConfigReader.get("test.user.password", "Test123"));
-        user.setTitle(ConfigReader.get("test.user.title", "Mr"));
-        user.setBirth_date(ConfigReader.get("test.user.birth_date", "15"));
-        user.setBirth_month(ConfigReader.get("test.user.birth_month", "January"));
-        user.setBirth_year(ConfigReader.get("test.user.birth_year", "1990"));
-        user.setFirstname(ConfigReader.get("test.user.firstname", "John"));
-        user.setLastname(ConfigReader.get("test.user.lastname", "Doe"));
-        user.setCompany(ConfigReader.get("test.user.company", "Tech Inc"));
-        user.setAddress1(ConfigReader.get("test.user.address1", "123 Main St"));
-        user.setAddress2(ConfigReader.get("test.user.address2", "Apt 4B"));
-        user.setCountry(ConfigReader.get("test.user.country", "USA"));
-        user.setZipcode(ConfigReader.get("test.user.zipcode", "10001"));
-        user.setState(ConfigReader.get("test.user.state", "NY"));
-        user.setCity(ConfigReader.get("test.user.city", "New York"));
-        user.setMobile_number(ConfigReader.get("test.user.mobile_number", "1234567890"));
+        user.setName(ConfigReader.get("test.user.name"));
+        user.setEmail(ConfigReader.get("test.user.email"));
+        user.setPassword(ConfigReader.get("test.user.password"));
+        user.setTitle(ConfigReader.get("test.user.title"));
+        user.setBirth_date(ConfigReader.get("test.user.birth_date"));
+        user.setBirth_month(ConfigReader.get("test.user.birth_month"));
+        user.setBirth_year(ConfigReader.get("test.user.birth_year"));
+        user.setFirstname(ConfigReader.get("test.user.firstname"));
+        user.setLastname(ConfigReader.get("test.user.lastname"));
+        user.setCompany(ConfigReader.get("test.user.company"));
+        user.setAddress1(ConfigReader.get("test.user.address1"));
+        user.setAddress2(ConfigReader.get("test.user.address2"));
+        user.setCountry(ConfigReader.get("test.user.country"));
+        user.setZipcode(ConfigReader.get("test.user.zipcode"));
+        user.setState(ConfigReader.get("test.user.state"));
+        user.setCity(ConfigReader.get("test.user.city"));
+        user.setMobile_number(ConfigReader.get("test.user.mobile_number"));
         return user;
     }
     
@@ -70,23 +70,23 @@ public class UserDataFactory {
      */
     public static User createUpdatedUser() {
         User user = new User();
-        user.setName(ConfigReader.get("test.user.updated.name", "John Smith"));
-        user.setEmail(ConfigReader.get("test.user.email", "john.doe@test.com"));
-        user.setPassword(ConfigReader.get("test.user.password", "Test123"));
-        user.setTitle(ConfigReader.get("test.user.title", "Mr"));
-        user.setBirth_date(ConfigReader.get("test.user.birth_date", "15"));
-        user.setBirth_month(ConfigReader.get("test.user.birth_month", "January"));
-        user.setBirth_year(ConfigReader.get("test.user.birth_year", "1990"));
-        user.setFirstname(ConfigReader.get("test.user.updated.firstname", "John"));
-        user.setLastname(ConfigReader.get("test.user.updated.lastname", "Smith"));
-        user.setCompany(ConfigReader.get("test.user.updated.company", "Tech Corp"));
-        user.setAddress1(ConfigReader.get("test.user.updated.address1", "456 Oak Ave"));
-        user.setAddress2(ConfigReader.get("test.user.updated.address2", "Suite 10"));
-        user.setCountry(ConfigReader.get("test.user.country", "USA"));
-        user.setZipcode(ConfigReader.get("test.user.updated.zipcode", "20002"));
-        user.setState(ConfigReader.get("test.user.updated.state", "CA"));
-        user.setCity(ConfigReader.get("test.user.updated.city", "Los Angeles"));
-        user.setMobile_number(ConfigReader.get("test.user.updated.mobile_number", "0987654321"));
+        user.setName(ConfigReader.get("test.user.updated.name"));
+        user.setEmail(ConfigReader.get("test.user.email"));
+        user.setPassword(ConfigReader.get("test.user.password"));
+        user.setTitle(ConfigReader.get("test.user.title"));
+        user.setBirth_date(ConfigReader.get("test.user.birth_date"));
+        user.setBirth_month(ConfigReader.get("test.user.birth_month"));
+        user.setBirth_year(ConfigReader.get("test.user.birth_year"));
+        user.setFirstname(ConfigReader.get("test.user.updated.firstname"));
+        user.setLastname(ConfigReader.get("test.user.updated.lastname"));
+        user.setCompany(ConfigReader.get("test.user.updated.company"));
+        user.setAddress1(ConfigReader.get("test.user.updated.address1"));
+        user.setAddress2(ConfigReader.get("test.user.updated.address2"));
+        user.setCountry(ConfigReader.get("test.user.country"));
+        user.setZipcode(ConfigReader.get("test.user.updated.zipcode"));
+        user.setState(ConfigReader.get("test.user.updated.state"));
+        user.setCity(ConfigReader.get("test.user.updated.city"));
+        user.setMobile_number(ConfigReader.get("test.user.updated.mobile_number"));
         return user;
     }
     
@@ -96,7 +96,7 @@ public class UserDataFactory {
      */
     public static User createUserWithInvalidEmail() {
         User user = createValidUser();
-        user.setEmail(ConfigReader.get("test.user.invalid.email", "invalid-email"));
+        user.setEmail(ConfigReader.get("test.user.invalid.email"));
         return user;
     }
     
@@ -116,8 +116,8 @@ public class UserDataFactory {
      */
     public static User createUserCredentials() {
         User user = new User();
-        user.setEmail(ConfigReader.get("test.user.email", "john.doe@test.com"));
-        user.setPassword(ConfigReader.get("test.user.password", "Test123"));
+        user.setEmail(ConfigReader.get("test.user.email"));
+        user.setPassword(ConfigReader.get("test.user.password"));
         return user;
     }
     
@@ -126,7 +126,7 @@ public class UserDataFactory {
      * @return Search term from configuration
      */
     public static String getSearchTerm() {
-        return ConfigReader.get("test.product.search.term", "top");
+        return ConfigReader.get("test.product.search.term");
     }
     
     /**
@@ -134,7 +134,7 @@ public class UserDataFactory {
      * @return Invalid search term from configuration
      */
     public static String getInvalidSearchTerm() {
-        return ConfigReader.get("test.product.search.invalid.term", "nonexistentproduct123");
+        return ConfigReader.get("test.product.search.invalid.term");
     }
     
     /**
@@ -142,7 +142,7 @@ public class UserDataFactory {
      * @return Array of search terms
      */
     public static String[] getSearchTerms() {
-        String terms = ConfigReader.get("test.product.search.terms", "top,tshirt,jean");
+        String terms = ConfigReader.get("test.product.search.terms");
         return terms.split(",");
     }
     
@@ -151,7 +151,7 @@ public class UserDataFactory {
      * @return Random search term
      */
     public static String getRandomSearchTerm() {
-        String[] searchTerms = {"top", "tshirt", "jean", "dress", "shirt", "pants"};
+        String[] searchTerms = getSearchTerms();
         int randomIndex = (int) (Math.random() * searchTerms.length);
         return searchTerms[randomIndex];
     }
