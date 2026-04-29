@@ -74,7 +74,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("search_product", searchTerm)
                 .when()
-                .post(endpoint);
+                .post(endpoint)
+                .then()
+                .extract()
+                .response();
     }
     
     // TC3: Create User Account
@@ -88,7 +91,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams(user.toMap())
                 .when()
-                .post(endpoint);
+                .post(endpoint)
+                .then()
+                .extract()
+                .response();
         
         long responseTime = System.currentTimeMillis() - startTime;
         
@@ -125,7 +131,10 @@ public class ApiClient {
                 .formParam("email", user.getEmail())
                 .formParam("password", user.getPassword())
                 .when()
-                .delete(endpoint);
+                .delete(endpoint)
+                .then()
+                .extract()
+                .response();
         
         long responseTime = System.currentTimeMillis() - startTime;
         
@@ -161,7 +170,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams(user.toMap())
                 .when()
-                .put(endpoint);
+                .put(endpoint)
+                .then()
+                .extract()
+                .response();
         
         long responseTime = System.currentTimeMillis() - startTime;
         
@@ -188,7 +200,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams(userData)
                 .when()
-                .post(endpoint);
+                .post(endpoint)
+                .then()
+                .extract()
+                .response();
     }
     
     public Response deleteUser(String endpoint, Map<String, String> credentials) {
@@ -201,7 +216,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams(credentials)
                 .when()
-                .delete(endpoint);
+                .delete(endpoint)
+                .then()
+                .extract()
+                .response();
         
         long responseTime = System.currentTimeMillis() - startTime;
         
@@ -226,7 +244,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams(userData)
                 .when()
-                .put(endpoint);
+                .put(endpoint)
+                .then()
+                .extract()
+                .response();
         
         long responseTime = System.currentTimeMillis() - startTime;
         
@@ -250,7 +271,10 @@ public class ApiClient {
                 .given()
                 .baseUri(ConfigReader.get("base.url"))
                 .when()
-                .get(endpoint);
+                .get(endpoint)
+                .then()
+                .extract()
+                .response();
         
         long responseTime = System.currentTimeMillis() - startTime;
         
@@ -275,7 +299,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams((Map<String, String>) body)
                 .when()
-                .post(endpoint);
+                .post(endpoint)
+                .then()
+                .extract()
+                .response();
         
         long responseTime = System.currentTimeMillis() - startTime;
         
@@ -297,7 +324,10 @@ public class ApiClient {
                 .contentType("application/json")
                 .body(body)
                 .when()
-                .post(endpoint);
+                .post(endpoint)
+                .then()
+                .extract()
+                .response();
     }
     
     public static Response putStatic(String endpoint, Object body) {
@@ -307,7 +337,10 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams((Map<String, String>) body)
                 .when()
-                .put(endpoint);
+                .put(endpoint)
+                .then()
+                .extract()
+                .response();
     }
     
     public static Response deleteStatic(String endpoint, Object body) {
@@ -317,6 +350,9 @@ public class ApiClient {
                 .contentType("application/x-www-form-urlencoded")
                 .formParams((Map<String, String>) body)
                 .when()
-                .delete(endpoint);
+                .delete(endpoint)
+                .then()
+                .extract()
+                .response();
     }
 }

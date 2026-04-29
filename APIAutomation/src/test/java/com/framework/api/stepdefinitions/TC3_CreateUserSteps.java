@@ -114,5 +114,4 @@ public class TC3_CreateUserSteps {
         LoggerUtil.logInfo("Validated user creation response schema");
     }
 
-    
 }
